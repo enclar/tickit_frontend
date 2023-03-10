@@ -14,7 +14,7 @@ const App = () => {
     // use effect
     useEffect(() => {
         getTasks();
-    });
+    }, []);
 
     return (
         <div id="app">
