@@ -6,14 +6,25 @@ const App = () => {
 
     // function to fetch the data and assign to state
     const getTasks = async () => {
-        const response = await fetch("/api/todo/task/list/", {
-            method: "GET",
-            headers: {
-                'Content-Type': 'application/json',
+        try {
+            const response = await fetch("/api/todo/task/list/", {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            const data = await response.json();
+
+            if (response.ok) {
+                setTasks(data);
+            } else {
+                console.log(response)
             }
-        });
-        const data = await response.json();
-        setTasks(data);
+
+        } catch (error) {
+            console.log("error:" + error)
+        }
+
     };
 
     // use effect
