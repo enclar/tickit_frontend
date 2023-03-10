@@ -15,7 +15,7 @@ const App = () => {
                 }
             });
 
-            // console.log("response: " + response);
+            console.log("response: " + response);
             const data = await response.json();
 
             if (response.ok) {
@@ -25,7 +25,7 @@ const App = () => {
                 console.log(response)
             }
         } catch (error) {
-            console.log("response: " + response);
+            // console.log("response: " + response);
             console.log("error: " + error);
         }
     };
