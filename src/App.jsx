@@ -7,8 +7,8 @@ const App = () => {
     // function to fetch the data and assign to state
     const getTasks = async () => {
         const response = await fetch("/api/task/list/");
-        const data = await response.json()
-        console.log(data);
+        const data = await response.json();
+        setTasks(data);
     };
 
     // use effect
@@ -19,6 +19,13 @@ const App = () => {
     return (
         <div id="app">
             <p>This is my App</p>
+            {
+                tasks?.map((task, index) => {
+                    return (
+                        <p key={index}>{task?.description}</p>
+                    )
+                })
+            }
         </div>
     )
 }
