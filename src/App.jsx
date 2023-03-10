@@ -9,8 +9,8 @@ const App = () => {
         try {
             const response = await fetch("api/todo/task/list/", {
                 method: "GET",
+                credentials: "same-origin",
                 headers: {
-                    credentials: "include",
                     'Content-Type': 'application/json',
                 }
             });
