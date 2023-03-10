@@ -7,9 +7,8 @@ const App = () => {
     // function to fetch the data and assign to state
     const getTasks = async () => {
         try {
-            const response = await fetch("api/todo/task/list/", {
+            const response = await fetch("api/todo/task/list", {
                 method: "GET",
-                // credentials: "include",
                 headers: {
                     'Content-Type': 'application/json',
                 }

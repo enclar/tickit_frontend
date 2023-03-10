@@ -5,7 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     proxy: {
-      "/api": "https://tickit-backend.onrender.com",
+      "/api": {
+        target: 'https://tickit-backend.onrender.com',
+        changeOrigin: true,
+        // rewrite: (path) => path.replace(/^\/api/, ''),
+      }
     },
   },
   plugins: [react()]
