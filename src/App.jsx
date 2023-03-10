@@ -13,7 +13,9 @@ const App = () => {
                     'Content-Type': 'application/json',
                 }
             });
-            const data = await response.json();
+
+            console.log("response: " + response);
+            // const data = await response.json();
 
             if (response.ok) {
                 setTasks(data);
