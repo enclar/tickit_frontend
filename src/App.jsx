@@ -6,7 +6,7 @@ const App = () => {
 
     // function to fetch the data and assign to state
     const getTasks = async () => {
-        const response = await fetch("/api/task/list/");
+        const response = await fetch("/api/todo/task/list/");
         const data = await response.json();
         setTasks(data);
     };
