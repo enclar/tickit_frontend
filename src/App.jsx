@@ -25,7 +25,8 @@ const App = () => {
                 console.log(response)
             }
         } catch (error) {
-            console.log("error: " + error)
+            console.log("response: " + response);
+            console.log("error: " + error);
         }
     };
 
