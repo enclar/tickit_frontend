@@ -9,7 +9,7 @@ const App = () => {
         try {
             const response = await fetch("api/todo/task/list/", {
                 method: "GET",
-                credentials: "include",
+                // credentials: "include",
                 headers: {
                     'Content-Type': 'application/json',
                 }
