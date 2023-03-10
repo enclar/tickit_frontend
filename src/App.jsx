@@ -10,15 +10,17 @@ const App = () => {
             const response = await fetch("/api/todo/task/list/", {
                 method: "GET",
                 headers: {
+                    credentials: "same-origin",
                     'Content-Type': 'application/json',
                 }
             });
 
-            console.log("response: " + response);
-            // const data = await response.json();
+            // console.log("response: " + response);
+            const data = await response.json();
 
             if (response.ok) {
                 setTasks(data);
+                console.log(response);
             } else {
                 console.log(response)
             }
