@@ -16,12 +16,7 @@ const App = () => {
 
             console.log("response: " + response);
 
-            try {
-                const data = await response.json();
-            } catch (error) {
-                console.log("data error: " + error);
-                throw error;
-            }
+            const data = await response.json();
 
 
             if (response.ok) {
@@ -31,7 +26,6 @@ const App = () => {
                 console.log(response)
             }
         } catch (error) {
-            // console.log("response: " + response);
             console.log("error: " + error);
         }
     };
