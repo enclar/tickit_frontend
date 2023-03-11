@@ -14,7 +14,7 @@ const App = () => {
                 }
             });
 
-            console.log("response: " + {response});
+            console.log("response: " + response.entries());
 
             try {
                 const data = await response.json();
