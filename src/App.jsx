@@ -14,8 +14,15 @@ const App = () => {
                 }
             });
 
-            console.log("response: " + response.body);
-            const data = await response.json();
+            console.log("response: " + response);
+
+            try {
+                const data = await response.json();
+            } catch (error) {
+                console.log("data error: " + error);
+                throw error;
+            }
+
 
             if (response.ok) {
                 setTasks(data);
